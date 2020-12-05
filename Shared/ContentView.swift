@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    //@ObservedObject var students: Students
     var students: [Student] = []
-    
     
     var body: some View {
         List(students) { item in
@@ -17,7 +17,7 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 Text(item.name)
                     .font(.headline)
-                Text("G: \(item.gender), A: \(item.age)")
+                Text("性别: \(item.gender), 年龄: \(item.age)")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
