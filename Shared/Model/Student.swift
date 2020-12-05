@@ -15,11 +15,10 @@ struct Student: Identifiable {
 }
 
 var testData = [
-    Student(name: "c m b", gender: "f", age: 22.2),
-    Student(name: "c b", gender: "f", age: 22.2),
-    Student(name: "c m", gender: "m", age: 23.2),
-    Student(name: "m b", gender: "f", age: 24.2),
-    Student(name: "m", gender: "m", age: 22.4),
-    Student(name: "cm b", gender: "f", age: 21.2),
-    
+    Student(name: "陈梦兵", gender: "女", age: 22.2),
+    Student(name: "曹梦", gender: "女", age: 22.2),
+    Student(name: "陈斌", gender: "男", age: 23.2),
+    Student(name: "马博", gender: "女", age: 24.2),
+    Student(name: "王强", gender: "男", age: 22.4),
+    Student(name: "赵敏", gender: "女", age: 21.2),
 ]
