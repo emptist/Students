@@ -12,7 +12,10 @@ struct ContentView: View {
     var students: [Student] = []
     
     var body: some View {
+        // - Mark - todo: add navigation view here
+        // A list of Students
         List(students) { item in
+            // Cell to display one Student
             Image(systemName: "photo")
             VStack(alignment: .leading) {
                 Text(item.name)
