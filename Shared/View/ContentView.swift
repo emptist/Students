@@ -45,7 +45,7 @@ struct ItemCell: View {
     var student: Student
     var body: some View {
         NavigationLink(
-            destination: Text(student.name),
+            destination: StudentDetail(student:student),
             label: {
                 // Cell to display one Student
                 Image(student.thumbnailName)

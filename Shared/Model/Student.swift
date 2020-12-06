@@ -13,6 +13,7 @@ struct Student: Identifiable {
     var gender: String
     var age: Int
     var thumbnailName: String = "lotus000"
+    var imageName: String = "lotus001"
 }
 
 var testData = [

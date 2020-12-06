@@ -17,6 +17,8 @@
 		48AA477B257BD5C300E29BD5 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4779257BD5C300E29BD5 /* Student.swift */; };
 		48AA4782257BDEA700E29BD5 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4781257BDEA700E29BD5 /* Students.swift */; };
 		48AA4783257BDEA700E29BD5 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4781257BDEA700E29BD5 /* Students.swift */; };
+		48BE9112257D2CCC00D09EC4 /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */; };
+		48BE9113257D2CCC00D09EC4 /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		48AA4767257BD43600E29BD5 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		48AA4779257BD5C300E29BD5 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		48AA4781257BDEA700E29BD5 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
+		48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +66,10 @@
 		48AA4754257BD43500E29BD5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				48BE9110257D2C9D00D09EC4 /* View */,
 				48AA4780257BDE4A00E29BD5 /* View Model */,
 				48AA4778257BD59800E29BD5 /* Model */,
 				48AA4755257BD43500E29BD5 /* StudentsApp.swift */,
-				48AA4756257BD43500E29BD5 /* ContentView.swift */,
 				48AA4757257BD43600E29BD5 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -112,6 +115,15 @@
 				48AA4781257BDEA700E29BD5 /* Students.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		48BE9110257D2C9D00D09EC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48AA4756257BD43500E29BD5 /* ContentView.swift */,
+				48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +226,7 @@
 				48AA476A257BD43600E29BD5 /* ContentView.swift in Sources */,
 				48AA477A257BD5C300E29BD5 /* Student.swift in Sources */,
 				48AA4768257BD43600E29BD5 /* StudentsApp.swift in Sources */,
+				48BE9112257D2CCC00D09EC4 /* StudentDetail.swift in Sources */,
 				48AA4782257BDEA700E29BD5 /* Students.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +238,7 @@
 				48AA476B257BD43600E29BD5 /* ContentView.swift in Sources */,
 				48AA477B257BD5C300E29BD5 /* Student.swift in Sources */,
 				48AA4769257BD43600E29BD5 /* StudentsApp.swift in Sources */,
+				48BE9113257D2CCC00D09EC4 /* StudentDetail.swift in Sources */,
 				48AA4783257BDEA700E29BD5 /* Students.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
