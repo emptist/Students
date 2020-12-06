@@ -17,8 +17,8 @@ struct ContentView: View {
             // A list of Students
             List {
                 
-                ForEach(students) { item in
-                    ItemCell(item: item)
+                ForEach(students) { student in
+                    ItemCell(student: student)
                 }
                 
                 HStack {
@@ -41,18 +41,18 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ItemCell: View {
-    var item: Student
+    var student: Student
     var body: some View {
         NavigationLink(
-            destination: Text(item.name),
+            destination: Text(student.name),
             label: {
                 // Cell to display one Student
                 Image(systemName: "photo")
                 VStack(alignment: .leading) {
-                    Text(item.name)
+                    Text(student.name)
                         .font(.headline)
                     
-                    Text("性别: \(item.gender), 年龄: \(item.age)")
+                    Text("性别: \(student.gender), 年龄: \(student.age)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
