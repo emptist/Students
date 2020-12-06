@@ -31,6 +31,7 @@ struct ContentView: View {
             .navigationTitle("Students")
             
         }
+        
     }
 }
 
@@ -47,7 +48,8 @@ struct ItemCell: View {
             destination: Text(student.name),
             label: {
                 // Cell to display one Student
-                Image(systemName: "photo")
+                Image(student.thumbnailName)
+                    //.resizable()
                 VStack(alignment: .leading) {
                     Text(student.name)
                         .font(.headline)
