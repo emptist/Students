@@ -18,3 +18,9 @@ class Students: ObservableObject {
         ]
     
 }
+
+extension Student {
+    var isYoung: Bool {
+        age < 23
+    }
+}

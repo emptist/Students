@@ -24,10 +24,10 @@ struct StudentDetail: View {
                 }
             Spacer()
             
-            if student.gender == "男" {
+            if student.isYoung && !zoomed{
                 HStack {
                     Spacer()
-                    Label("Male", systemImage:"flame.fill")
+                    Label("Young", systemImage:"flame.fill")
                     Spacer()
                 }
                 .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -45,6 +45,13 @@ struct StudentDetail: View {
 
 struct StudentDetail_Previews: PreviewProvider {
     static var previews: some View {
-        StudentDetail(student: testData[0])
+        Group {
+            NavigationView {
+                StudentDetail(student: testData[0])
+            }
+            NavigationView {
+                StudentDetail(student: testData[2])
+            }
+        }
     }
 }
