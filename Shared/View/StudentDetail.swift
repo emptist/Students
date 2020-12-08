@@ -34,6 +34,7 @@ struct StudentDetail: View {
                 .font(Font/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/.smallCaps())
                 .background(Color.red)
                 .foregroundColor(.yellow)
+                .transition(.move(edge: .bottom))
             } else {
                 /*@START_MENU_TOKEN@*/EmptyView()/*@END_MENU_TOKEN@*/
             }

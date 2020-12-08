@@ -30,6 +30,9 @@ struct ContentView: View {
             }
             .navigationTitle("Students")
             
+            Text("Please Add Some Students")
+                .font(.title)
+            
         }
         
     }
