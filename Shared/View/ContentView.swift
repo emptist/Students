@@ -30,6 +30,7 @@ struct ContentView: View {
             }
             .navigationTitle("Students")
             
+            // this is for iPad and MacOS
             Text("Please Add Some Students")
                 .font(.title)
             
