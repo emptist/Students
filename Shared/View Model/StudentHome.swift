@@ -1,5 +1,5 @@
 //
-//  StudentClass.swift
+//  StudentHome.swift
 //  Students
 //
 //  Created by jk on 2020/12/9.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-class StudentClass {
+class StudentHome: ObservableObject {
     var students: Array<Student>
     init(students: Array<Student> = []) {
         self.students = students
     }
 }
 
-let testClass = StudentClass(students: testData)
+let testHome = StudentHome(students: testData)

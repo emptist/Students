@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@ObservedObject var students: Students
+    @ObservedObject var home: StudentHome
     var students: [Student] = []
     
     var body: some View {
@@ -17,13 +17,13 @@ struct ContentView: View {
             // A list of Students
             List {
                 
-                ForEach(students) { student in
+                ForEach(home.students) { student in
                     ItemCell(student: student)
                 }
                 
                 HStack {
                     Spacer()
-                    Text("\(students.count) Students")
+                    Text("\(home.students.count) Students")
                         .foregroundColor(.secondary)
                     Spacer()
                 }
@@ -41,7 +41,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(students: testData)
+        ContentView(home:  testHome)
     }
 }
 
