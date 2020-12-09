@@ -16,10 +16,11 @@ struct ContentView: View {
         NavigationView {
             // A list of Students
             List {
-                
                 ForEach(home.students) { student in
                     ItemCell(student: student)
                 }
+                .onMove(perform: moveStudent)
+                .onDelete(perform: deleteStudent)
                 
                 HStack {
                     Spacer()
@@ -27,15 +28,42 @@ struct ContentView: View {
                         .foregroundColor(.secondary)
                     Spacer()
                 }
+                
             }
             .navigationTitle("Students")
+            .toolbar {
+                #if os(iOS)
+                EditButton()
+                #endif
+                Button("Add", action: makeStudent)
+            }
             
             // this is for iPad and MacOS
             Text("Please Add Some Students")
-                .font(.title)
+                .font(.largeTitle)
             
         }
         
+    }
+
+
+
+    func makeStudent() -> Void {
+        withAnimation {
+            home.students.append(Student(name: "hwa", gender: "male", age: 23, thumbnailName: "Lotus000", imageName: "lotus001"))
+        }
+    }
+    
+    func moveStudent(from oldIndex:IndexSet, to newIndex:Int) -> Void {
+        withAnimation {
+            home.students.move(fromOffsets: oldIndex, toOffset: newIndex)
+        }
+    }
+    
+    func deleteStudent(offsets:IndexSet) -> Void {
+        withAnimation {
+            home.students.remove(atOffsets: offsets)
+        }
     }
 }
 
