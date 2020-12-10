@@ -9,34 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var home: StudentHome
-    var students: [Student] = []
-    
+
     var body: some View {
         // - Mark - todo: add navigation view here
         NavigationView {
             // A list of Students
-            List {
-                ForEach(home.students) { student in
-                    ItemCell(student: student)
-                }
-                .onMove(perform: moveStudent)
-                .onDelete(perform: deleteStudent)
-                
-                HStack {
-                    Spacer()
-                    Text("\(home.students.count) Students")
-                        .foregroundColor(.secondary)
-                    Spacer()
-                }
-                
-            }
-            .navigationTitle("Students")
-            .toolbar {
-                #if os(iOS)
-                EditButton()
-                #endif
-                Button("Add", action: makeStudent)
-            }
+            StudentList(home: home)
             
             // this is for iPad and MacOS
             Text("Please Add Some Students")
@@ -48,23 +26,7 @@ struct ContentView: View {
 
 
 
-    func makeStudent() -> Void {
-        withAnimation {
-            home.students.append(Student(name: "hwa", gender: "male", age: 23, thumbnailName: "Lotus000", imageName: "lotus001"))
-        }
-    }
     
-    func moveStudent(from oldIndex:IndexSet, to newIndex:Int) -> Void {
-        withAnimation {
-            home.students.move(fromOffsets: oldIndex, toOffset: newIndex)
-        }
-    }
-    
-    func deleteStudent(offsets:IndexSet) -> Void {
-        withAnimation {
-            home.students.remove(atOffsets: offsets)
-        }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -92,5 +54,53 @@ struct ItemCell: View {
                 }
             }
         )
+    }
+}
+
+struct StudentList: View {
+    @ObservedObject var home: StudentHome
+    
+    var body: some View {
+        List {
+            ForEach(home.students) { student in
+                ItemCell(student: student)
+            }
+            .onMove(perform: moveStudent)
+            .onDelete(perform: deleteStudent)
+            
+            HStack {
+                Spacer()
+                Text("\(home.students.count) Students")
+                    .foregroundColor(.secondary)
+                Spacer()
+            }
+            
+        }
+        .navigationTitle("Students")
+        .toolbar {
+            #if os(iOS)
+            EditButton()
+            #endif
+            Button("Make Student", action: makeStudent)
+        }
+    }
+    
+    func makeStudent() -> Void {
+        withAnimation {
+            home.students.append(Student(name: "hwa", gender: "male", age: 23, thumbnailName: "Lotus000", imageName: "lotus001"))
+            print(home.students)
+        }
+    }
+    
+    func moveStudent(from oldIndex:IndexSet, to newIndex:Int) -> Void {
+        withAnimation {
+            home.students.move(fromOffsets: oldIndex, toOffset: newIndex)
+        }
+    }
+    
+    func deleteStudent(offsets:IndexSet) -> Void {
+        withAnimation {
+            home.students.remove(atOffsets: offsets)
+        }
     }
 }
