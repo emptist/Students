@@ -56,7 +56,7 @@ struct ItemCell: View {
 }
 
 struct StudentList: View {
-    @ObservedObject var home: StudentHome = testHome
+    @ObservedObject var home: StudentHome = StudentHome(students: testData) //testHome
     
     var body: some View {
         List {
@@ -77,10 +77,10 @@ struct StudentList: View {
         .navigationTitle("Students")
         .toolbar {
             #if os(iOS)
-            EditButton()
-            //Button("Make Student", action: makeStudent)
-            #endif
+            //EditButton()
             Button("Make Student", action: makeStudent)
+            #endif
+            //Button("Make Student", action: makeStudent)
         }
     }
     
