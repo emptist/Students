@@ -14,4 +14,10 @@ class StudentHome: ObservableObject {
     }
 }
 
+extension Student {
+    var isYoung: Bool {
+        age < 23
+    }
+}
+
 let testHome = StudentHome(students: testData)

@@ -17,8 +17,6 @@
 		48AA476D257BD43600E29BD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48AA4757257BD43600E29BD5 /* Assets.xcassets */; };
 		48AA477A257BD5C300E29BD5 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4779257BD5C300E29BD5 /* Student.swift */; };
 		48AA477B257BD5C300E29BD5 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4779257BD5C300E29BD5 /* Student.swift */; };
-		48AA4782257BDEA700E29BD5 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4781257BDEA700E29BD5 /* Students.swift */; };
-		48AA4783257BDEA700E29BD5 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AA4781257BDEA700E29BD5 /* Students.swift */; };
 		48BE9112257D2CCC00D09EC4 /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */; };
 		48BE9113257D2CCC00D09EC4 /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +32,6 @@
 		48AA4766257BD43600E29BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48AA4767257BD43600E29BD5 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		48AA4779257BD5C300E29BD5 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		48AA4781257BDEA700E29BD5 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		48BE9111257D2CCC00D09EC4 /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +111,6 @@
 		48AA4780257BDE4A00E29BD5 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				48AA4781257BDEA700E29BD5 /* Students.swift */,
 				485AF84F25800179008BF026 /* StudentHome.swift */,
 			);
 			path = "View Model";
@@ -232,7 +228,6 @@
 				48AA4768257BD43600E29BD5 /* StudentsApp.swift in Sources */,
 				48BE9112257D2CCC00D09EC4 /* StudentDetail.swift in Sources */,
 				485AF85025800179008BF026 /* StudentHome.swift in Sources */,
-				48AA4782257BDEA700E29BD5 /* Students.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +240,6 @@
 				48AA4769257BD43600E29BD5 /* StudentsApp.swift in Sources */,
 				48BE9113257D2CCC00D09EC4 /* StudentDetail.swift in Sources */,
 				485AF85125800179008BF026 /* StudentHome.swift in Sources */,
-				48AA4783257BDEA700E29BD5 /* Students.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
