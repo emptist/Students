@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var home: StudentHome
-
     var body: some View {
         // - Mark - todo: add navigation view here
         NavigationView {
             // A list of Students
-            StudentList(home: home)
+            StudentList()
             
             // this is for iPad and MacOS
             Text("Please Add Some Students")
@@ -31,7 +29,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(home:  testHome)
+        ContentView()
     }
 }
 
@@ -58,7 +56,7 @@ struct ItemCell: View {
 }
 
 struct StudentList: View {
-    @ObservedObject var home: StudentHome
+    @ObservedObject var home: StudentHome = testHome
     
     var body: some View {
         List {
