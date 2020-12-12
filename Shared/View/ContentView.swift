@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // - Mark - todo: add navigation view here
         NavigationView {
             // A list of Students
             StudentList()
@@ -17,15 +16,11 @@ struct ContentView: View {
             // this is for iPad and MacOS
             Text("Please Add Some Students")
                 .font(.largeTitle)
-            
         }
-        
     }
-
-
-
-    
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -41,7 +36,7 @@ struct ItemCell: View {
             label: {
                 // Cell to display one Student
                 Image(student.thumbnailName)
-                    //.resizable()
+                //.resizable()
                 VStack(alignment: .leading) {
                     Text(student.name)
                         .font(.headline)
@@ -63,6 +58,7 @@ struct StudentList: View {
             ForEach(home.students) { student in
                 ItemCell(student: student)
             }
+            
             .onMove(perform: moveStudent)
             .onDelete(perform: deleteStudent)
             
@@ -76,18 +72,19 @@ struct StudentList: View {
         }
         .navigationTitle("Students")
         .toolbar {
-            #if os(iOS)
-            //EditButton()
             Button("Make Student", action: makeStudent)
+            
+            #if os(iOS)
+            EditButton()
             #endif
-            //Button("Make Student", action: makeStudent)
+            
         }
     }
     
     func makeStudent() -> Void {
         withAnimation {
             home.students.append(Student(name: "hwa", gender: "male", age: 23, thumbnailName: "Lotus000", imageName: "lotus001"))
-            print(home.students)
+            //print(home.students)
         }
     }
     
