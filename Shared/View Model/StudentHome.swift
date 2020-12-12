@@ -8,7 +8,7 @@
 import Foundation
 
 class StudentHome: ObservableObject {
-    @Published var students: Array<Student>
+    @Published var students: Array<Student> = testData
     init(students: Array<Student> = []) {
         self.students = students
     }
@@ -20,4 +20,4 @@ extension Student {
     }
 }
 
-var testHome = StudentHome(students: testData)
+//var testHome = StudentHome(students: testData)
