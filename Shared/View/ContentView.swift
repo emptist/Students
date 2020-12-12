@@ -78,6 +78,7 @@ struct StudentList: View {
         .toolbar {
             #if os(iOS)
             EditButton()
+            //Button("Make Student", action: makeStudent)
             #endif
             Button("Make Student", action: makeStudent)
         }
