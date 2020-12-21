@@ -16,7 +16,7 @@ struct Student: Identifiable {
     var imageName: String = "lotus001"
 }
 
-var testData = [
+let testData = [
     Student(name: "陈梦兵", gender: "女", age: 22),
     Student(name: "曹梦", gender: "女", age: 22),
     Student(name: "陈斌", gender: "男", age: 23),

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var home: StudentHome
     var body: some View {
         NavigationView {
             // A list of Students
-            StudentList()
+            StudentList(home: home)
             
             // this is for iPad and MacOS
             Text("Please Add Some Students")
@@ -24,7 +25,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(home: testHome)
     }
 }
 
@@ -36,6 +37,7 @@ struct ItemCell: View {
             label: {
                 // Cell to display one Student
                 Image(student.thumbnailName)
+                    .cornerRadius(9.0)
                 //.resizable()
                 VStack(alignment: .leading) {
                     Text(student.name)
@@ -51,16 +53,15 @@ struct ItemCell: View {
 }
 
 struct StudentList: View {
-    @ObservedObject var home: StudentHome = StudentHome(students: testData) //testHome
+    @ObservedObject var home: StudentHome //= StudentHome(students: testData) //testHome
     
     var body: some View {
         List {
-            ForEach(home.students) { student in
-                ItemCell(student: student)
-            }
-            
-            .onMove(perform: moveStudent)
-            .onDelete(perform: deleteStudent)
+                ForEach(home.students) { student in
+                    ItemCell(student: student)
+                }
+                .onMove(perform: moveStudent)
+                .onDelete(perform: deleteStudent)
             
             HStack {
                 Spacer()
@@ -72,12 +73,13 @@ struct StudentList: View {
         }
         .navigationTitle("Students")
         .toolbar {
-            Button("Make Student", action: makeStudent)
-            
-            #if os(iOS)
-            EditButton()
-            #endif
-            
+            HStack {
+                #if os(iOS)
+                EditButton()
+                #endif
+                Button("Add", action: makeStudent)
+                //Spacer()
+            }
         }
     }
     

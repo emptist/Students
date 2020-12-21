@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct StudentsApp: App {
+    @StateObject private var home = StudentHome(students: testData)
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(home:home)
         }
     }
 }
