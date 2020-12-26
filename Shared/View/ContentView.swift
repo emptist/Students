@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var home: StudentHome
+    @ObservedObject var home: Archive
     var body: some View {
         NavigationView {
             // A list of Students
@@ -53,11 +53,11 @@ struct ItemCell: View {
 }
 
 struct StudentList: View {
-    @ObservedObject var home: StudentHome //= StudentHome(students: testData) //testHome
+    @ObservedObject var home: Archive //= Archive(candidates: testData) //testHome
     
     var body: some View {
         List {
-                ForEach(home.students) { student in
+                ForEach(home.candidates) { student in
                     ItemCell(student: student)
                 }
                 .onMove(perform: moveStudent)
@@ -65,7 +65,7 @@ struct StudentList: View {
             
             HStack {
                 Spacer()
-                Text("\(home.students.count) Students")
+                Text("\(home.candidates.count) Students")
                     .foregroundColor(.secondary)
                 Spacer()
             }
@@ -85,20 +85,20 @@ struct StudentList: View {
     
     func makeStudent() -> Void {
         withAnimation {
-            home.students.append(Student(name: "hwa", gender: "male", age: 23, thumbnailName: "Lotus000", imageName: "lotus001"))
+            home.candidates.append(Student(name: "hwa", gender: "male", age: 23, thumbnailName: "Lotus000", imageName: "lotus001"))
             //print(home.students)
         }
     }
     
     func moveStudent(from oldIndex:IndexSet, to newIndex:Int) -> Void {
         withAnimation {
-            home.students.move(fromOffsets: oldIndex, toOffset: newIndex)
+            home.candidates.move(fromOffsets: oldIndex, toOffset: newIndex)
         }
     }
     
     func deleteStudent(offsets:IndexSet) -> Void {
         withAnimation {
-            home.students.remove(atOffsets: offsets)
+            home.candidates.remove(atOffsets: offsets)
         }
     }
 }

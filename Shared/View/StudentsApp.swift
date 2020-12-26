@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct StudentsApp: App {
-    @StateObject private var home = StudentHome(students: testData)
+    @StateObject private var home = Archive(students: testData)
     var body: some Scene {
         WindowGroup {
             ContentView(home:home)
